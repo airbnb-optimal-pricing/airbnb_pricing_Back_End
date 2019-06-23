@@ -1,0 +1,33 @@
+{
+  "name": "airbnb_pricing_Back_End",
+  "version": "1.0.0",
+  "description": "Back End Repo",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon",
+    "start": " node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airbnb-optimal-pricing/airbnb_pricing_Back_End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airbnb-optimal-pricing/airbnb_pricing_Back_End/issues"
+  },
+  "homepage": "https://github.com/airbnb-optimal-pricing/airbnb_pricing_Back_End#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.17.6",
+    "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

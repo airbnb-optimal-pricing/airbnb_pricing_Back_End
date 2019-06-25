@@ -15,6 +15,7 @@ const properties = [
         "baths": 2,
         "sqfoot": 1500,
         "pool" :" yes", 
+        "asking price": 740
     },
     {
         id: 1,
@@ -23,6 +24,7 @@ const properties = [
         "baths": 5,
         "sqfoot": 2500,
         "pool": " yes",
+        "asking price": 850
     },
     {
         id: 2,
@@ -31,6 +33,7 @@ const properties = [
         "baths": 2,
         "sqfoot": 2500,
         "pool": " yes",
+        "asking price": 1050 
     },
     {
         id: 3,
@@ -39,6 +42,7 @@ const properties = [
         "baths": 12,
         "sqfoot": 4500,
         "pool": " yes",
+        "asking price": 1500
     },
 
 ]
@@ -48,5 +52,9 @@ const properties = [
 server.get('/', (req, res) => {
     res.send('hello the server is up and running')
 });
+
+server.get('/properties', (req, res)=> {
+    res.status(200).json(properties);
+})
 
 module.exports = server;

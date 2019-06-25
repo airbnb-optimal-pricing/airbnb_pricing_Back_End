@@ -53,6 +53,17 @@ server.get('/', (req, res) => {
     res.send('hello the server is up and running')
 });
 
+server.post('/properties', (req, res) => {
+    const {title, bedrooms, baths, sqfoot, pool, askingPrice}= req.body;
+    const newProperty = { title, bedrooms, baths, sqfoot, pool, askingPrice };
+    if (!title || !bedrooms || !baths || !sqfoot || !askingPrice ){
+        res.status(422).json({ message: "Whoops you forgot to list all of the features"})
+    } else {
+        properties.push(newProperty);
+        res.status(201).json(properties)
+    }
+})
+
 server.get('/properties', (req, res)=> {
     res.status(200).json(properties);
 })

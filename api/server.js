@@ -15,7 +15,7 @@ const properties = [
         "baths": 2,
         "sqfoot": 1500,
         "pool" :" yes", 
-        "asking price": 740
+        "askingPrice": 740
     },
     {
         id: 1,
@@ -24,7 +24,7 @@ const properties = [
         "baths": 5,
         "sqfoot": 2500,
         "pool": " yes",
-        "asking price": 850
+        "askingPrice": 850
     },
     {
         id: 2,
@@ -33,7 +33,7 @@ const properties = [
         "baths": 2,
         "sqfoot": 2500,
         "pool": " yes",
-        "asking price": 1050 
+        "askingPrice": 1050 
     },
     {
         id: 3,
@@ -42,7 +42,7 @@ const properties = [
         "baths": 12,
         "sqfoot": 4500,
         "pool": " yes",
-        "asking price": 1500
+        "askingPrice": 1500
     },
 
 ]
@@ -66,6 +66,15 @@ server.post('/properties', (req, res) => {
 
 server.get('/properties', (req, res)=> {
     res.status(200).json(properties);
+})
+
+server.get('/properties/:id', (req, res)=> {
+    const id= req.params.id;
+    const property = properties.map(property =>{
+        if(property.id === id) {
+            return property;
+        }
+    })
 })
 
 module.exports = server;

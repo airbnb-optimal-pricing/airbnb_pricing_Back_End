@@ -11,7 +11,7 @@ router.get('/', restricted, (req, res) => {
             if (properties) {
                 res.status(200).json(properties)
             } else {
-                res.status(404).json({ error: 'Could not find properties });
+                res.status(404).json({ error: 'Could not find properties })
             }
         })
         .catch(error =>

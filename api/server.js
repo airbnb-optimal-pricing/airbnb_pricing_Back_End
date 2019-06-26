@@ -2,11 +2,14 @@ const express = require('express');
 const helmet = require('helmet');
 
 const usersRouter= require('../routes/users-router');
+const authRouter = require("../routes/auth/auth");
+
 const server = express();
 
 server.use(express.json());
 server.use(helmet());
 server.use('/api/users', usersRouter)
+server.use('/auth', authRouter)
 const properties = [
     {
         id: 0,

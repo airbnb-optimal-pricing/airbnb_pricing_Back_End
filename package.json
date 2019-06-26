@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon",
-    "start" : "node index.js "
+    "start": "node index.js "
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "helmet": "^3.18.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.17.6",
+    "pg": "^7.11.0",
     "server": "^1.0.19",
     "sqlite3": "^4.0.9"
   },

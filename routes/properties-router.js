@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
+const axios = require('axios');
 const restricted = require('../helpers/auth/restricted');
-
+//const request = require("request");
 const Properties = require('../data/models/properties');
 
 router.get('/',restricted,  (req, res) => {
@@ -16,6 +16,25 @@ router.get('/',restricted,  (req, res) => {
         })
         .catch(error =>
             res.status(500).send(error))
+})
+
+router.post('/userproperties',   (req, res) => {
+    axios
+        .post("http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/prediction", {
+            headers: { accept: "application/json" },
+            zipcode: req.body.zipcode.toString(),
+            bedrooms: parseFloat(req.body.bedrooms),
+            bathrooms: parseFloat(req.body.bathrooms),
+            property_type: req.body.property_type.toString(),
+            room_type: req.body.room_type.toString(),
+            accommodates: parseFloat(req.body.accommodates),
+            beds: parseFloat(req.body.beds),
+            bed_type: req.body.bed_type.toString()
+        })
+        .then(response =>
+            res.status(200).json(response.data))
+
+        .catch(err => res.status(500).json(err.response));
 })
 
 router.post('/account',  (req, res) => {

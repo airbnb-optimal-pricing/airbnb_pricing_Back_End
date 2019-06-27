@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Simple =  require('../data/models/simple')
+const axios = require('axios');
 
 router.post('/prop', (req, res) => {
     Simple.add(req.body)
@@ -15,7 +16,19 @@ router.post('/prop', (req, res) => {
             res.status(500).send(error))
 })
 
-
+router.post('/simpleprediction', (req, res) => {
+    axios
+        .post("http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/simpleprediction", {
+            headers: { accept: "application/json" },
+            zipcode: req.body.zipcode.toString(),
+            bedrooms: parseFloat(req.body.bedrooms),
+            bathrooms: parseFloat(req.body.bathrooms)
+        })
+        .then(response =>
+            res.status(200).json(response.data))
+    
+        .catch(err => res.status(500).json(err.response));
+})
 
 /*
 router.get('/', (req, res) => {

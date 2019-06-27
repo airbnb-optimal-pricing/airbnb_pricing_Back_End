@@ -18,6 +18,19 @@ router.get('/', (req, res) => {
             res.status(500).send(error))
 })
 
+router.post('/account', restricted,  (req, res) => {
+    Properties.add()
+    .then(property => {
+        if(property){
+        res.status(200).json(property)
+} else {
+    res.status(404).json({error: ' Could not add that property'});
+}
+    })
+    .catch(error => 
+        res.status(500).send(error))
+})
+
 router.get('/:id', restricted, (req, res) => {
     Properties.findById(req.params.id)
         .then(properties => {

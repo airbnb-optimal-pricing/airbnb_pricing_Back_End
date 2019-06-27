@@ -1,5 +1,5 @@
-const router = express.Router();
-const request = require("request");
+/*const router = express.Router();
+//const request = require("request");
 const Simple =  require('../data/models/simple')
 
 
@@ -33,4 +33,4 @@ router.post("/", async (req, res) => {
     }
 });
 */
-module.exports = router;
+/*module.exports = router;*/

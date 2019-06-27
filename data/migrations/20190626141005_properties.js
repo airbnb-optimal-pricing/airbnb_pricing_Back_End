@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('properties', prop => {
       prop.increments();
       prop
-      .integer('zipcode')
+      .string('zipcode')
       .notNullable();
       prop
       .string('property_type', 255)
@@ -12,16 +12,16 @@ exports.up = function(knex, Promise) {
       .string('room_type')
       .notNullable();
       prop
-     .integer('accommodates')
+     .float('accommodates')
       .notNullable();
       prop
-      .decimal('bathrooms', 2, 1)
+      .float('bathrooms', 2, 1)
       .notNullable();
       prop
-      .integer('bedrooms')
+      .float('bedrooms')
       .notNullable();
       prop
-      .integer('beds')
+      .float('beds')
       .notNullable();
       prop
       .string('bed_type')

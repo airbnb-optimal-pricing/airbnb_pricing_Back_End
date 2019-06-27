@@ -5,7 +5,7 @@ const restricted = require('../helpers/auth/restricted');
 
 const Properties = require('../data/models/properties');
 
-router.get('/', (req, res) => {
+router.get('/',restricted,  (req, res) => {
     Properties.find()
         .then(properties => {
             if (properties) {

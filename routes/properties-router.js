@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
             res.status(500).send(error))
 })
 
-router.post('/account', restricted,  (req, res) => {
+router.post('/account',  (req, res) => {
     Properties.add()
     .then(property => {
         if(property){

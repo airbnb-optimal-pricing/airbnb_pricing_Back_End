@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
                 headers: { "content-type": "application/json" },
                 url:
                     "http://flask-env.9kbtud3pm3.us-east-2.elasticbeanstalk.com/simpleprediction",
-                body: req.body
+                body: JSON.stringify({req.body})
             },
             (error, response, body) => {
                 if (error) {

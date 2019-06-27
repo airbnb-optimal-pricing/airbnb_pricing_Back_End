@@ -1,6 +1,21 @@
-/*const router = express.Router();
-const request = require("request");
-//const Simple =  require('../data/models/simple')
+const express = require('express');
+const router = express.Router();
+const Simple =  require('../data/models/simple')
+
+router.post('/prop', (req, res) => {
+    Simple.add(req.body)
+        .then(simple => {
+            if (simple) {
+                res.status(200).json(simple)
+            } else {
+                res.status(404).json({ error: ' Could not add that property' });
+            }
+        })
+        .catch(error =>
+            res.status(500).send(error))
+})
+
+
 
 /*
 router.get('/', (req, res) => {
@@ -36,5 +51,5 @@ router.post("/", async (req, res) => {
         res.status(500).json({ message: "error" });
     }
 });
-
-module.exports = router;*/
+*/
+module.exports = router;

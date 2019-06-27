@@ -25,6 +25,7 @@
     "helmet": "^3.18.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.17.6",
+    "knex-cleaner": "^1.1.4",
     "pg": "^7.11.0",
     "request": "^2.88.0",
     "server": "^1.0.19",

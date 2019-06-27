@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 
-
+/*
 router.post("/", async (req, res) => {
     try {
         request.post(
@@ -32,5 +32,5 @@ router.post("/", async (req, res) => {
         res.status(500).json({ message: "error" });
     }
 });
-
+*/
 module.exports = router;

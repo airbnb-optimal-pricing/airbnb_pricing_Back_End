@@ -1,6 +1,6 @@
 const router = express.Router();
 const request = require("request");
-const Simple =  require('../data/models/simple')
+//const Simple =  require('../data/models/simple')
 
 /*
 router.get('/', (req, res) => {
@@ -17,7 +17,11 @@ router.post("/", async (req, res) => {
                 headers: { "content-type": "application/json" },
                 url:
                     "http://flask-env.9kbtud3pm3.us-east-2.elasticbeanstalk.com/simpleprediction",
-                body: ({req.body})
+                body: JSON.stringify({
+                    zipcode: "90210",
+                    bathrooms: 5.0,
+                    bedrooms: 2.0
+                })
             },
             (error, response, body) => {
                 if (error) {

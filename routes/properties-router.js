@@ -19,7 +19,7 @@ router.get('/',restricted,  (req, res) => {
 })
 
 router.post('/account',  (req, res) => {
-    Properties.add()
+    Properties.add(req.body)
     .then(property => {
         if(property){
         res.status(200).json(property)

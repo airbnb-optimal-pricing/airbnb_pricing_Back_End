@@ -95,7 +95,7 @@ router.delete('/:id', restricted, (req, res) => {
     Properties.remove(req.params.id)
         .then(deleted => {
             if (deleted) {
-                res.status(200).json({ message: 'Propertu successfully deleted' });
+                res.status(200).json({ message: 'Property successfully deleted' });
             } else {
                 res.status(404).json({ message: 'Could not delete user.' })
             }

@@ -1,4 +1,4 @@
-const router = express.Router();
+/*const router = express.Router();
 const request = require("request");
 //const Simple =  require('../data/models/simple')
 
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 */
 
-
+/*
 router.post("/", async (req, res) => {
     try {
         request.post(
@@ -37,4 +37,4 @@ router.post("/", async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = router;*/

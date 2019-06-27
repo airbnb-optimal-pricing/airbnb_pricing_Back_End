@@ -1,15 +1,15 @@
-/*const router = express.Router();
-//const request = require("request");
+const router = express.Router();
+const request = require("request");
 const Simple =  require('../data/models/simple')
 
-
+/*
 router.get('/', (req, res) => {
     Simple.find()
 
 })
+*/
 
 
-/*
 router.post("/", async (req, res) => {
     try {
         request.post(
@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
                 headers: { "content-type": "application/json" },
                 url:
                     "http://flask-env.9kbtud3pm3.us-east-2.elasticbeanstalk.com/simpleprediction",
-                body: JSON.stringify({req.body})
+                body: ({req.body})
             },
             (error, response, body) => {
                 if (error) {
@@ -32,5 +32,5 @@ router.post("/", async (req, res) => {
         res.status(500).json({ message: "error" });
     }
 });
-*/
-/*module.exports = router;*/
+
+module.exports = router;

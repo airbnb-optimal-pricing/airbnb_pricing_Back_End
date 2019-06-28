@@ -42,7 +42,7 @@ router.post("/test", async (req, res) => {
             {
                 headers: { "content-type": "application/json" },
                 url:
-                    "http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/simpleprediction",
+                    "http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/prediction",
                 body: JSON.stringify({
                     zipcode: req.body.zipcode.toString(),
                     bedrooms: parseFloat(req.body.bedrooms),

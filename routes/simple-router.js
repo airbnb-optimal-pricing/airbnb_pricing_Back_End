@@ -3,6 +3,7 @@ const router = express.Router();
 const Simple =  require('../data/models/simple')
 const axios = require('axios');
 const request = require('request');
+const restricted = require('../helpers/auth/restricted');
 router.post('/prop', (req, res) => {
     Simple.add(req.body)
         .then(simple => {
@@ -16,7 +17,7 @@ router.post('/prop', (req, res) => {
             res.status(500).send(error))
 })
 
-router.post('/simpleprediction', (req, res) => {
+router.post('/simpleprediction', restricted,  (req, res) => {
     axios
         .post("http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/simpleprediction", {
             headers: { accept: "application/json" },

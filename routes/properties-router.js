@@ -18,7 +18,7 @@ router.get('/',restricted,  (req, res) => {
             res.status(500).send(error))
 })
 
-router.post('/userproperties', restricted,   (req, res) => {
+router.post('/userproperties',   (req, res) => {
     axios
         .post("http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/prediction", {
             headers: { accept: "application/json" },

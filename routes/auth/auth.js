@@ -20,7 +20,7 @@ router.post('/register', (req, res) => {
         res.status(500).json(error)
     })
 })
-router.post('/userproperties', restricted, (req, res) => {
+/*router.post('/userproperties', restricted, (req, res) => {
     axios
         .post("http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/prediction", {
             headers: { accept: "application/json" },
@@ -37,7 +37,7 @@ router.post('/userproperties', restricted, (req, res) => {
             res.status(200).json(response.data))
 
         .catch(err => res.status(500).json(err.response));
-})
+})*/
 router.post('/login', (req, res) => {
     let {username, password}= req.body;
     Users.findBy({username})

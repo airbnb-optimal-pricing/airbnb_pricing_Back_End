@@ -17,7 +17,7 @@ router.get('/',restricted,  (req, res) => {
         .catch(error =>
             res.status(500).send(error))
 })
-router.post('/userproperties',     (req, res) => {
+router.post('/userproperties',   restricted,   (req, res) => {
     axios
         .post("http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/prediction", {
             headers: { accept: "application/json" },
@@ -35,7 +35,7 @@ router.post('/userproperties',     (req, res) => {
 
         .catch(err => res.status(500).json(err.response));
 })
-router.post("/test",   async (req, res) => {
+router.post("/test",  restricted,  async (req, res) => {
     try {
         request.post(
             {
@@ -45,7 +45,7 @@ router.post("/test",   async (req, res) => {
                 zipcode: req.body.zipcode.toString(),
                 bedrooms: parseFloat(req.body.bedrooms),
                 bathrooms: parseFloat(req.body.bathrooms),
-                property_type: req.body.property_type.toString(),
+                property_type: req.body.property_type,
                 room_type: req.body.room_type.toString(),
                 accommodates: (req.body.accommodates),
                 beds: (req.body.beds),

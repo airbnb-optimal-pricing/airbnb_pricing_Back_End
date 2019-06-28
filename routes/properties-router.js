@@ -27,8 +27,8 @@ router.post('/userproperties',   (req, res) => {
             bathrooms: parseFloat(req.body.bathrooms),
             property_type: req.body.property_type.toString(),
             room_type: req.body.room_type.toString(),
-            accommodates: parseFloat(req.body.accommodates),
-            beds: parseFloat(req.body.beds),
+            accommodates: (req.body.accommodates),
+            beds: (req.body.beds),
             bed_type: req.body.bed_type.toString()
         })
         .then(response =>
@@ -43,7 +43,6 @@ router.post("/test",  restricted, async (req, res) => {
                 headers: { "content-type": "application/json" },
                 url:
                     "http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/prediction",
-                body: JSON.stringify({
                     zipcode: req.body.zipcode,
                     bedrooms: (req.body.bedrooms),
                     bathrooms: (req.body.bathrooms),
@@ -52,7 +51,7 @@ router.post("/test",  restricted, async (req, res) => {
                     accommodates: (req.body.accommodates),
                     beds: (req.body.beds),
                     bed_type: req.body.bed_type
-                })
+                
             },
             (error, response, body) => {
                 if (error) {

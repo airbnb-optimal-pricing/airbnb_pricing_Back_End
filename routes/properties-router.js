@@ -36,7 +36,7 @@ router.post('/userproperties',   (req, res) => {
 
         .catch(err => res.status(500).json(err.response));
 })
-router.post("/test",  async (req, res) => {
+router.post("/test",  restricted, async (req, res) => {
     try {
         request.post(
             {

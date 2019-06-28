@@ -45,12 +45,12 @@ router.post("/test",  async (req, res) => {
                     "http://flask-env.kmg6svp6sr.us-east-2.elasticbeanstalk.com/prediction",
                 body: JSON.stringify({
                     zipcode: req.body.zipcode.toString(),
-                    bedrooms: parseFloat(req.body.bedrooms),
-                    bathrooms: parseFloat(req.body.bathrooms),
+                    bedrooms: (req.body.bedrooms),
+                    bathrooms: (req.body.bathrooms),
                     property_type: req.body.property_type.toString(),
                     room_type: req.body.room_type.toString(),
-                    accommodates: parseFloat(req.body.accommodates),
-                    beds: parseFloat(req.body.beds),
+                    accommodates: (req.body.accommodates),
+                    beds: (req.body.beds),
                     bed_type: req.body.bed_type.toString()
                 })
             },
